@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Navigointi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+       
+      #place-types    {
+          text-align: center;
+          
+      }
+       
+      #map {
+        height: 850px;
+		width: 1200px;
+	    margin: 0 auto;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: black;
+        background: #3D7EAA;  /* Sivun taka tausta, väri, josta css design, vasen puoli kelt ja oikea puol sininen*/
+background: -webkit-linear-gradient(to right, #FFE47A, #3D7EAA);  
+background: linear-gradient(to right, #FFE47A, #3D7EAA); 
+
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+<h1>Welcome to the service!</h1>
+
+<h2>Choose your service and distance:</h2>
+
+
+    
+<!--Lähi alueen navigoitu käyttäjän sijainti, josta jälkeen voi syöttää hakuun x-metrin
+mielellään yli 100m, koska kun klikkaa "submit" jonka jälkeen paikkojen tyyppit, josta sijainti ei näy
+
+1. syötä distance valikkoon lähi alue esim 2km = 2000, klikkaa submit
+2. josta sen jälkeen valitse listalta olevat palvelu tyyppit
+3. viimeisenä josta tulostaa lähi alueen annettu ensimmäisenä alueen tyyppit
+4. josta sen jälkeen voi valita muitakin
+5. Jos klikkaa clearmark, josta puhdistaa tyyppin lähi alueen sijainit, vain käyttäjän tarkka sijainti jää
+
+6. kun syötät uuden distance lähi alueen suuruuden esim. yli sen ensimmäisen vaihtoehdon
+7. jos sen jälkeen taas klikkaat submit ja valitset listattu tyyppin
+8. viimeisenä taas näkyy palvelun sijainnit, oikea ala kulmasta, voi laajentaa karttan suuruuden
+
+huom.Vain navigoitu käyttäjän sijainnissa pöytäkoneessa ei näyttä 100% missä käyttäjä oikein on,
+vain  toimii kannettavissa koneessa & puhelimessa käyttäjän tarkkan sijainin, muissa tilanteessa se navigoitu
+tarkka sijainti heittää muualle
+
+
+-->
+
+<form>
+    
+  Distance in meters: <input type="number" id="distance" name="distance" min="0" max="10000" step="100">
+  <input type="button" onclick="getDistance()" value="Submit">
+        <input onclick="clearMarker();" type=button value="Clear markers" >
+
+</form>
+
+<!--Paikkojen tyyppit mm. kuntosalit, kauppat, ravintolat, teatterit ja jne-->
+<div class="place-types">
+    <input class="with-gap" name="type" type="radio" id="lodging" value="lodging" />
+    <label for="lodging">Lodging</label>
+</div>
+<div class="place-types">
+    <input class="with-gap" name="type" type="radio" id="restaurant" value="restaurant" />
+    <label for="restaurant">Restaurant</label>
+</div>
+<div class="place-types">
+    <input class="with-gap" name="type" type="radio" id="pharmacy" value="pharmacy" />
+    <label for="apotik">Pharmacy</label>
+</div>
+<div class="place-types">
+    <input class="with-gap" name="type" type="radio" id="ds" value="department_store" />
+    <label for="ds">Department Store</label>
+</div>
+
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCO3-1UTuTTyP3_rFOtgfEG4hwaLmfCFk&libraries=places&callback=initMap" async defer></script>
+<script>
+var map, google, infoWindow, navigator;
+var center = {
+        lat: 60.7385,
+        lng: 24.7729
+    };
+var markers = [];
+var mapDistance = 0;
+   function initMap() {
+       
+       console.log('Google Maps API version: ' + google.maps.version);
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 60.7385, lng: 24.7729},
+          zoom: 5.4
+          
+        });callService( map, 'lodging');   
+	
+        infoWindow = new google.maps.InfoWindow;
+		
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+			
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Your location.');
+            infoWindow.open(map);
+            
+            map.setCenter(pos);
+			map.setZoom(15);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+
+ 
+
+function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+        }
+    }
+}
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });    
+    markers.push(marker);
+    
+}
+function callService( map, place) {
+	var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+        location: center,
+        radius: mapDistance,
+        type: [place]
+    }, callback);
+}
+function clearMarker() {
+	for( var i = 0; i < markers.length; i++ ) {
+    	markers[i].setMap(null);
+    }
+}
+
+function getDistance() {
+  let distance = parseInt(document.getElementById("distance").value);
+  mapDistance = distance;
+  console.log("we got here");
+  callService(map, place);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-3.1.1.min.js"></script>
+<script src="jquery.js"></script>
+
+    </body>
+    
+</html>
