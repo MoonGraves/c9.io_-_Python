@@ -1,0 +1,8 @@
+'https://shibboleth.hamk.fi/shibboleth-idp-hamk/Authn/UserPassword,
+link: https://www.google.fi/?gws_rd=ssl,href="http://example.com">More Examples</a>
+<a href="http://example2.com">Even More Examples</a>
+https://www.verkkokauppa.com/fi/catalog/8672d/MacBook-Pro
+https://www.is.fi/taloussanomat/
+http://gigantti.fi/
+http://wikipedia.org/wiki/Lorem-ipsum
+'
