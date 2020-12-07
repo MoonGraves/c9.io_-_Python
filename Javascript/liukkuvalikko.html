@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+<form>
+    <input type="text" id="username"
+    placeholder="Your user name, no spaces allowed"
+    autofocus size="60" maxlength="80"><br>
+    <label for="password">Password:</label>
+    <input type="password" size="20" id="password" pattern="^[\w,.\-:;?!]{8,20}$"><br>
+    <fieldset><legend>gender</legend>
+    
+    
+    <label for="male"><input type="radio" name="gender" value="m" id="male" checked>male</label>
+    <label for="female"><input type="radio" name="gender" value="f" id="female">female</label>
+    </fieldset>
+    <input type="number" id="age" min="0" max="130"><br>
+    <input type="range" id="price" min="0" max="1000" step="10" value="100"><br>
+
+    <label for="id_price2">Price (with editable number and update):</label>
+    <input type="range" id="id_price2" min="0" max="1000" step="10" value="50"
+    oninput="id_price2_output.value = this.value">
+    <input type="number" id="id_price2_output" value="50"
+    oninput="id_price2.value = this.value" min="0" max="1000" step="10"><br>
+    
+    <fieldset><legend>Country:</legend>
+    <select name="country">
+        <optgroup label="Scandinavia">
+        <option value="de">Denmark</option>
+        <option value="no">Norway</option>
+        <option value="sv">Sweden</option>
+        </optgroup>
+        <optgroup label="Baltic">
+        <option value="es" selected>Estonia</option>
+        <option value="lv">Latvia</option>
+        <option value="lt">Lithuania</option>
+        </optgroup>
+    </select>
+    </fieldset>
+    
+    <label for="profession">Profession:</label>
+    <input list="professions" id="profession" size="40">
+    <datalist id="professions">
+      <option value="nurse">
+      <option value="teacher">
+      <option value="plumber">
+      <option value="bureaucrat">
+    </datalist>
+    <br>
+    
+    <label id="id_message">Message:</label><br>
+    <textarea name="message" id="id_message" rows="6" cols="80" maxlength="1000"
+placeholder="Type here your message. Max 1000 characters" required></textarea>
+<br>
+    
+    <input type="submit" value="Send">
+</form>        
+    </body>
+</html>
