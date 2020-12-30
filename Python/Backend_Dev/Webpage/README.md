@@ -4,7 +4,7 @@ Toiminnaltaan voi olla useampi tekijä ja aktivoida localhost webbisivuston käy
 
 <b> CMD </b>
 Avaat oman tietokoneen missä olet ladannut oman python sovelluksen mikäli versio on 3 tai sitä <b> uudempi </b>.
-CMD:ssä avaat sijoittavan python polun mikäli on ladattu siellä esim: C:\Python\Python\
+CMD:ssä avaat sijoittavan python polun mikäli on ladattu siellä esim: C:\Python\Python36\ tai mikäli on window-SSD(C:) sisäisen Program Files tai (x86):ssak
 
 
 <b>-Komennot </b>
