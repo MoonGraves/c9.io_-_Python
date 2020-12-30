@@ -9,7 +9,7 @@ CMD:ssä avaat sijoittavan python polun mikäli on ladattu siellä esim: C:\Pyth
 
 <b>-Komennot </b>
 
-cd \ (heittää sinut Directory of C:\ kuin; <b> tämä tietokone </b>)
+cd \ (heittää sinut Directory of C:\ kuin; <b> tämä tietokone </b>) <br>
 cd dir (tiedoston olemassa olevat kansiot ja muut paketit tiedostot (txt, jpg, png ja jne) >> lyhenne tulee; directory
 
 Käynnistäessä joko aktivoit sen protokollan osoitteella 8080 tai 8000, jotka ovat oletuksena, 
