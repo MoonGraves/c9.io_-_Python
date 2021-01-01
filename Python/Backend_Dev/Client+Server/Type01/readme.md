@@ -1,4 +1,4 @@
-Käyttäjä voi käyttää useita sovelluksia eism. <b> VsCode </b> tai muu kaltaista on ok,koska tyyppillisesti useissa ladatuissa sovelluksissa on terminal eli komentorivi kuin cmd tyyppinen.  
+Käyttäjä voi käyttää useita sovelluksia esim. <b> VsCode </b> tai muu kaltaista on ok, koska nykyään useissa ladatuissa sovelluksissa on terminal eli komentorivi kuin cmd tyyppinen.  
 tässä on käytetty client - :ssa tarvittavan ip-osoite ja portti protokolla, koska se yhdistää kuin tyyppillisen methodi/parametrin funktion
 
 saman aikaisesti serveri kuuntelee tai lukaisee tulevien ip-osoiteen tai muun tekijänssä, että client voi olla useita käytettäviä tekijöitä mm. cmd tai oman sovelluksen Vscoden sisäisen terminal cmd. <b>
