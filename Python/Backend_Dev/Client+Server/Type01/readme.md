@@ -1,14 +1,13 @@
-If user or trying from software it's fine, like <b> VsCode </b> or other, because there must need it by terminal as cmd type or just normal cmd from windows.
-in this type only client need the ip-address and port protocol, because it connect type method/parameters functions.
+Käyttäjä voi käyttää useita sovelluksia eism. <b> VsCode </b> tai muu kaltaista on ok,koska tyyppillisesti useissa ladatuissa sovelluksissa on terminal eli komentorivi kuin cmd tyyppinen.  
+tässä on käytetty client - :ssa tarvittavan ip-osoite ja portti protokolla, koska se yhdistää kuin tyyppillisen methodi/parametrin funktion
 
-As same time server listen coming the ip address or others. As can use multiple cmd or same as cmd - terminal type. <br>
-First able active the server, then the multiple client. There will be see user laptop/pc ip-address with small id, because it's same person. <br>
-This ip address is fake, just need from your pc/laptop by cmd - ipconfig (IPV4 address). <br>
+saman aikaisesti serveri kuuntelee tai lukaisee tulevien ip-osoiteen tai muun tekijänssä, että client voi olla useita käytettäviä tekijöitä mm. cmd tai oman sovelluksen Vscoden sisäisen terminal cmd. <b>
+Ensinnäkin käynnistä serveri, vasta sen jälkeen käynnistät useamman client.py. Tässä tulostuu siten, että näkee tämän ip-osoitten ja käyttäjän käytetävän työaklun eli läppäri tai pöytäkone, ja sisältyen pieni id-tunnus. id tunnus muuttuu kokoajan, paitsi mikäli on yksi ja sama henkilö. <br>
+tässä esityksesä ip-osoite on vale, kannattaa käyttää oman tietokoneen varsinaisen ip-osoite minkä voit tarkistaa komentoriviltä syötät - ipconfig (IPV4 address). <br>
 
-In client there is small print, because user can type anything sms to sent server, because there is def send (function) + default print message. <br>
-Just type keyboard the 'enter' there will be carry on the systems and default sms will be sent it to continue. <br>
-<br>
-After the !Disconnect, there can play multiple client, but after the ip address will be new id number anyway and server can be running all the time like endless.
+Tässä esityksessä client voi syöttää haluamansa viestin, koska tässä automaatisesti luotu viesti, jos käyttäjä näppytää näppäimistöstä vain "Enter" niin se automaatinen viesti lähtee eteenpäin. <br>
+Myös tähän vaikuttaa se def send (funktio) + ja oletus viestit eli print <br>
+Kunnes päättyy !DISCONNECT, voidaan käynnistää useita client.py, mutta ip-osoitteen perään se id tunnus muuttuu kuitenkin ja serveri voi pyöriä niin kauan, kunnes sammutettaan se terminal
 
 
 *output from server* <br>
