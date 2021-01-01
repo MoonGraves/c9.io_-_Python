@@ -1,4 +1,5 @@
 If user or trying from software it's fine, because there must need it by terminal as cmd type or just normal cmd from windows
+Both of them must be same ip address, because just one pc/lap run two of files
 
 Need it for two terminal (cmd) windows, because one of them is client and server.
 First actived the client.py and as quick as possible type the: python server.py , because there is kind a time set...
