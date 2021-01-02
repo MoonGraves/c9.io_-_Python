@@ -1,0 +1,27 @@
+https://docs.python.org/3/library/http.server.html
+
+Vaihtoehtoisena on voidaan kuljettaa tai käynnistää cmd:n kautta localhost:in ja porttin, tai vaihtoehtoisena oletuksen on loopback Internet protocol (127.0.0.1) ja portti 8080
+
+Kannattaa tarkistaa, että tietokoneessa on ladattu python versio 3 tai sitä uudempi.
+>> python -m http.server 8080
+-tämän jälkeen avat tyhjät sivuston syötät: localhost:8080
+
+vaihtoehtoinen kommento tyyppi:
+>> python -m http.server 8080 --bind 127.0.0.1
+-tämän jälkeen avat tyhjät sivuston syötät: localhost:8080 tai 127.0.0.1:8080
+
+Sovelluksen lopettaminen: ctrl + c
+
+-Tässä on huomioitava, koska käynnistää sen python localhost kommenon ja vaikuttaa polkuun eli cd pälä\pälä\pölö\pölö\KansionNimi.
+Koska avatessa tyhjän nettisivuston voi syöttää localhost:8080, heti ensimmäisenä näkyy directory of joku pälä, 
+tämän toiminta periaatte toimii kuin alimmassa esimerkissä (oma tietokone). 
+VAIN eroanna on sitä, että käynnistäessä esim. määritettyjen polussa on index.html, se päättyy siihen asti, ei voi palata sen jälkeen takaisin muihin tiedostoihin.
+
+- Esim. C:\Python\Python36\WebPage\ tämän kansion sisällä on vain index.html sivustoja, ja tähän käynnistäettään se localhost kommento, ja avatessa tyhjän sivuston, 
+oletuksena näkee heti ensimmäisenä on index.html, toki voidaan sijoittaa lopu perään muita index sivustoja mitä on olemassa, jos ei syntyy (Error Response) ja Cmd:ssä näkyy 404,
+että sellaista ei ole olemassa ja ei löydy.
+
+
+- Sekä toimii kuin tavallinen "oma tietokone" - mutta aakkosjärjestyksessä, kuin tyhjä välilehti "file:///C:/Users/YourNAME/Documents/"
+Sitä voidaan etsiä ja avata tyhjän välilehden oletuksena sen mukaisen tiedoston resoluution koon mukaan esim. kuvan/videon tai netti sivuton (sisäisen määrittyn kuvan/video koko)
+Että muita tiedostoja .txt, pdf ja jne.
