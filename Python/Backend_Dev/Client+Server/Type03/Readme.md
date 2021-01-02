@@ -15,3 +15,4 @@ kun sivusto päivittyy tai F5 cmd näkyy GET / HTTP/1.1 , koska se on itsensä k
 >>GET / HTTP/1.1
 >>GET / HTTP/1.1
 >>
+![Alt text](img.PNG?raw=true "Title")
