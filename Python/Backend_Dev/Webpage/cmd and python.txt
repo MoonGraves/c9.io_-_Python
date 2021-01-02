@@ -2,7 +2,12 @@ https://docs.python.org/3/library/http.server.html
 
 Vaihtoehtoisena on voidaan kuljettaa tai käynnistää cmd:n kautta localhost:in ja porttin, tai vaihtoehtoisena oletuksen on loopback Internet protocol (127.0.0.1) ja portti 8080
 
-Kannattaa tarkistaa, että tietokoneessa on ladattu python versio 3 tai sitä uudempi.
+Kannattaa tarkistaa, että tietokoneessa on ladattu python versio 2 tai 3 tai sitä uudempi.
+
+-Python 2
+>> python -m SimpleHTTPServer 8000
+
+-Python 3
 >> python -m http.server 8080
 -tämän jälkeen avat tyhjät sivuston syötät: localhost:8080
 
