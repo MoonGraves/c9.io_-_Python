@@ -18,6 +18,11 @@ Kaikilla toimivat localhost:8080 tai loopback: 127.0.0.1:8080, paitsi client1 ja
 >>GET / HTTP/1.1
 >>GET / HTTP/1.1
 >>
+
+<br>
+
 ![Alt text](images/img.JPG?raw=true "Title")
 <br> 
+
+Erona on vain localhost ja loopback ip-osoite 127.0.0.1, muuten samat asemat
 ![Alt text](images/img2.jpg?raw=true "None")
