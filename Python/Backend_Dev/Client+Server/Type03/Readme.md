@@ -19,4 +19,5 @@ Kaikilla toimivat localhost:8080 tai loopback: 127.0.0.1:8080, paitsi client1 ja
 >>GET / HTTP/1.1
 >>
 ![Alt text](images/img.JPG?raw=true "Title")
-![Alt text](images/img2.JPG?raw=true "Title")
+<br> 
+![Alt text](images/img2.jpg?raw=true "None")
