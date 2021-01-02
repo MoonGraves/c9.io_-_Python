@@ -18,3 +18,8 @@ class Serv(BaseHTTPRequestHandler):
         
 httpd = HTTPServer(('localhost', 8080), Serv)
 httpd.serve_forever()
+
+#
+#default sivusto on index.html
+##
+#
