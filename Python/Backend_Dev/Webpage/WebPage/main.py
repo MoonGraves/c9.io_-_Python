@@ -22,4 +22,7 @@ httpd.serve_forever()
 #
 #default sivusto on index.html
 ##
-#
+#voit käyttää cmd tai VsCode käynnistät tämän main.py
+#sitten tyhjän sivuston avaat localhost:8080
+#voidaan avata olemassa olevia sivustoja esim. localhost:8080/index2.html
+#jos ei ole niitä olevia sivustoja sitten muodostuu "file not found" ja cmd:ssä syntyy error 404
